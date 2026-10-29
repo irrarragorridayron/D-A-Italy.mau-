@@ -13,3 +13,13 @@ Avisos:
 
 ACTUALIZACIÓN v2: reemplaza los archivos del proyecto con esta versión. Se añade doble almacenamiento local (localStorage + IndexedDB) y se actualiza la caché del Service Worker. Si los datos ya se borraron del navegador y no existe respaldo, no es posible reconstruirlos automáticamente.
 \nNOVEDADES v3:\n- Precio unitario de venta se rellena al elegir un producto.\n- Cierre diario del IPV solo cuando el usuario confirma.\n- Historial de cierres por fecha; se puede consultar y corregir fecha, cantidad, costo o precio del registro histórico sin alterar el inventario actual.\n- Los cierres se incluyen en la copia de seguridad JSON.\nIMPORTANTE: antes de reemplazar archivos, exporta una copia desde la app actual. La nueva versión conserva la misma clave de almacenamiento y añade el historial IPV.\n
+NOVEDAD v4 — PRODUCCIÓN POR LOTES
+- Guarda recetas reutilizables con producto terminado, rendimiento base e ingredientes del inventario.
+- Al confirmar un lote, la app valida las existencias y descuenta automáticamente los ingredientes.
+- Añade las unidades buenas fabricadas al inventario del producto terminado.
+- Registra unidades defectuosas/merma sin añadirlas al inventario vendible.
+- Calcula costo total de ingredientes y costo por unidad buena; crea número de lote y conserva historial con detalle.
+- Permite cambiar el multiplicador de receta y ajustar las unidades buenas obtenidas antes de confirmar.
+- La producción por lotes es adicional al flujo manual anterior.
+
+Antes de actualizar, exporta una copia de seguridad desde la pestaña Copias. Reemplaza todos los archivos en GitHub por los de esta carpeta. La app mantiene la misma clave local de datos, pero conserva siempre una copia de seguridad por precaución.
