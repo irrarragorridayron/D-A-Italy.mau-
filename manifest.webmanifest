@@ -1,0 +1,19 @@
+{
+  "name": "D&A Italy.Mau — Inventario y Finanzas",
+  "short_name": "D&A Italy.Mau",
+  "description": "Inventario, ventas, producción y control financiero offline",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6fb",
+  "theme_color": "#082858",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

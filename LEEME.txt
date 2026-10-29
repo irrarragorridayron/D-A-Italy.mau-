@@ -1,0 +1,12 @@
+D&A Italy.Mau — primera versión funcional local
+1. Sube TODO el contenido de esta carpeta a la raíz de un repositorio de GitHub Pages.
+2. Activa GitHub Pages desde Settings > Pages (rama principal, carpeta /root).
+3. Abre el enlace publicado en Chrome Android y elige Instalar app / Añadir a pantalla de inicio.
+4. Abre la app una vez con Internet para que se almacenen los archivos y después podrá abrir sin conexión.
+5. Usa Copias > Exportar copia de seguridad regularmente. Guarda el JSON fuera del teléfono.
+6. Para restaurar, abre Copias > Importar copia de seguridad.
+Avisos:
+- Los datos viven en el almacenamiento local de este navegador/dispositivo.
+- Esta versión inicial no sincroniza varios dispositivos.
+- No borres almacenamiento/datos de Chrome sin exportar una copia.
+- El control financiero es una base inicial: revisa los importes antes de usarla como contabilidad oficial.
