@@ -130,7 +130,14 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const blank=()=>({version:1,products:[],sales:[],movements:[],money:[],opening:null,debts:0,createdAt:dateTime()});
 let db=load();
 function load(){try{const raw=localStorage.getItem(DBKEY);if(!raw)return blank();const d=JSON.parse(raw);return {...blank(),...d}}catch(e){return blank()}}
-function save(){localStorage.setItem(DBKEY,JSON.stringify(db));render()}
+// Doble persistencia: localStorage + IndexedDB para reducir el riesgo de pérdida al cerrar la app.
+const IDB_NAME='DA_Italy_Mau_DB', IDB_STORE='appdata', IDB_KEY='main';
+function openAppDB(){return new Promise((resolve,reject)=>{if(!('indexedDB' in window))return reject(new Error('IndexedDB no disponible'));const req=indexedDB.open(IDB_NAME,1);req.onupgradeneeded=()=>{const d=req.result;if(!d.objectStoreNames.contains(IDB_STORE))d.createObjectStore(IDB_STORE)};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('No se pudo abrir la base local'))})}
+async function writeIDB(snapshot){try{const idb=await openAppDB();await new Promise((resolve,reject)=>{const tx=idb.transaction(IDB_STORE,'readwrite');tx.objectStore(IDB_STORE).put(snapshot,IDB_KEY);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error)});idb.close()}catch(err){console.warn('Respaldo IndexedDB no disponible',err)}}
+async function readIDB(){const idb=await openAppDB();const value=await new Promise((resolve,reject)=>{const tx=idb.transaction(IDB_STORE,'readonly');const req=tx.objectStore(IDB_STORE).get(IDB_KEY);req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error)});idb.close();return value}
+function save(){const snapshot=JSON.parse(JSON.stringify(db));try{localStorage.setItem(DBKEY,JSON.stringify(snapshot))}catch(e){console.error('No se pudo guardar en localStorage',e)}writeIDB(snapshot);render()}
+async function recoverLocalData(){try{const saved=await readIDB();if(!saved)return;const currentCount=(db.products?.length||0)+(db.sales?.length||0)+(db.movements?.length||0)+(db.money?.length||0);const savedCount=(saved.products?.length||0)+(saved.sales?.length||0)+(saved.movements?.length||0)+(saved.money?.length||0);const localRaw=localStorage.getItem(DBKEY);if(!localRaw||savedCount>currentCount){db={...blank(),...saved};try{localStorage.setItem(DBKEY,JSON.stringify(db))}catch(e){}render();toast('Datos locales recuperados correctamente.')}}catch(e){console.warn('No se encontró respaldo IndexedDB',e)}}
+if(navigator.storage&&navigator.storage.persist){navigator.storage.persist().then(granted=>console.log('Almacenamiento persistente:',granted)).catch(()=>{})}
 function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.classList.remove('hide');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.add('hide'),2800)}
 function dayOf(x){return String(x||'').slice(0,10)}
 function dateFor(m){return m.date||dayOf(m.createdAt)||today()}
@@ -173,5 +180,7 @@ document.getElementById('exportReport').addEventListener('click',()=>{const d=do
 document.getElementById('clearBtn').addEventListener('click',()=>{if(prompt('Para borrar todos los datos escribe BORRAR')!=='BORRAR')return;localStorage.removeItem(DBKEY);db=blank();save();toast('Datos locales borrados.')});
 if('serviceWorker' in navigator && location.protocol!=='file:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}))}
 render();
+recoverLocalData();
+window.addEventListener('pagehide',()=>{try{localStorage.setItem(DBKEY,JSON.stringify(db));writeIDB(db)}catch(e){}});
 </script>
 </body></html>

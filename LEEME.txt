@@ -10,3 +10,5 @@ Avisos:
 - Esta versión inicial no sincroniza varios dispositivos.
 - No borres almacenamiento/datos de Chrome sin exportar una copia.
 - El control financiero es una base inicial: revisa los importes antes de usarla como contabilidad oficial.
+
+ACTUALIZACIÓN v2: reemplaza los archivos del proyecto con esta versión. Se añade doble almacenamiento local (localStorage + IndexedDB) y se actualiza la caché del Service Worker. Si los datos ya se borraron del navegador y no existe respaldo, no es posible reconstruirlos automáticamente.
