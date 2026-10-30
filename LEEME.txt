@@ -23,3 +23,8 @@ NOVEDAD v4 — PRODUCCIÓN POR LOTES
 - La producción por lotes es adicional al flujo manual anterior.
 
 Antes de actualizar, exporta una copia de seguridad desde la pestaña Copias. Reemplaza todos los archivos en GitHub por los de esta carpeta. La app mantiene la misma clave local de datos, pero conserva siempre una copia de seguridad por precaución.
+
+
+ACTUALIZACIÓN v5 — IPV RESTAURADO
+Esta versión conserva el módulo de recetas y lotes de producción de v4 y vuelve a incluir el cierre diario de IPV con confirmación, historial de cierres, corrección de datos históricos y detalle de inventario. Al abrir un cierre con el botón “Ver”, también muestra los movimientos de productos y ventas guardados para esa fecha.
+Antes de reemplazar los archivos, exporta una copia de seguridad desde Copias. Se mantiene la misma clave de almacenamiento local. El service worker usa una caché nueva para actualizar la interfaz.
