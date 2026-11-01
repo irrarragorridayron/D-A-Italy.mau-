@@ -28,3 +28,7 @@ Antes de actualizar, exporta una copia de seguridad desde la pestaña Copias. Re
 ACTUALIZACIÓN v5 — IPV RESTAURADO
 Esta versión conserva el módulo de recetas y lotes de producción de v4 y vuelve a incluir el cierre diario de IPV con confirmación, historial de cierres, corrección de datos históricos y detalle de inventario. Al abrir un cierre con el botón “Ver”, también muestra los movimientos de productos y ventas guardados para esa fecha.
 Antes de reemplazar los archivos, exporta una copia de seguridad desde Copias. Se mantiene la misma clave de almacenamiento local. El service worker usa una caché nueva para actualizar la interfaz.
+
+
+ACTUALIZACIÓN v6 — CONTROL DE COMPRAS
+Al registrar una entrada/compra desde Inventario > Acciones > Entrada, la app pregunta la forma de pago: efectivo, tarjeta/banco, transferencia o crédito. Las compras pagadas se descuentan del saldo de la cuenta elegida; las compras a crédito aumentan las deudas sin rebajar caja. El costo promedio del producto se actualiza con la cantidad y costo de la compra. Haz una copia de seguridad antes de actualizar.
