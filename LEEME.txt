@@ -32,3 +32,9 @@ Antes de reemplazar los archivos, exporta una copia de seguridad desde Copias. S
 
 ACTUALIZACIÓN v6 — CONTROL DE COMPRAS
 Al registrar una entrada/compra desde Inventario > Acciones > Entrada, la app pregunta la forma de pago: efectivo, tarjeta/banco, transferencia o crédito. Las compras pagadas se descuentan del saldo de la cuenta elegida; las compras a crédito aumentan las deudas sin rebajar caja. El costo promedio del producto se actualiza con la cantidad y costo de la compra. Haz una copia de seguridad antes de actualizar.
+
+
+Novedades v8:
+- Las entradas de mercancía (compras), salidas y movimientos de producción se muestran en el detalle del IPV de la fecha en que se registraron.
+- Cada movimiento de producto nuevo guarda explícitamente su fecha local.
+- La cabecera muestra la versión de la aplicación (8.0).
