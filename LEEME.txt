@@ -34,7 +34,17 @@ ACTUALIZACIÓN v6 — CONTROL DE COMPRAS
 Al registrar una entrada/compra desde Inventario > Acciones > Entrada, la app pregunta la forma de pago: efectivo, tarjeta/banco, transferencia o crédito. Las compras pagadas se descuentan del saldo de la cuenta elegida; las compras a crédito aumentan las deudas sin rebajar caja. El costo promedio del producto se actualiza con la cantidad y costo de la compra. Haz una copia de seguridad antes de actualizar.
 
 
-Novedades v8:
+Novedades v9:
 - Las entradas de mercancía (compras), salidas y movimientos de producción se muestran en el detalle del IPV de la fecha en que se registraron.
 - Cada movimiento de producto nuevo guarda explícitamente su fecha local.
 - La cabecera muestra la versión de la aplicación (8.0).
+
+
+NOVEDADES VERSIÓN 9.0
+- Sección Mantenimiento y almacenamiento.
+- Exportación de cierres IPV y movimientos a archivos JSON independientes.
+- Limpieza manual de cierres IPV conservando los 60 más recientes.
+- Limpieza manual de movimientos de inventario anteriores a una fecha elegida.
+- La limpieza no elimina ventas, movimientos financieros, productos, recetas ni lotes.
+- Estimación del tamaño de los datos y del almacenamiento del navegador cuando esté disponible.
+- Se actualizó la caché del service worker a da-italy-mau-v9.
