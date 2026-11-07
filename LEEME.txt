@@ -48,3 +48,21 @@ NOVEDADES VERSIÓN 9.0
 - La limpieza no elimina ventas, movimientos financieros, productos, recetas ni lotes.
 - Estimación del tamaño de los datos y del almacenamiento del navegador cuando esté disponible.
 - Se actualizó la caché del service worker a da-italy-mau-v9.
+
+
+NOVEDAD VERSIÓN 10 — AUDITORÍA MANUAL
+- Se añadió la sección Auditoría de caja e inventario.
+- Permite guardar diferencias de caja y productos faltantes como pendientes, sin alterar automáticamente saldos ni existencias.
+- Permite registrar manualmente una venta omitida confirmada, con fecha, producto, cantidad, precio y forma de pago.
+- La venta omitida descuenta la existencia y suma el cobro a través del registro de venta; no crea un ingreso financiero duplicado.
+- Antes de reemplazar la app publicada, exporta una copia completa desde Copias de seguridad. El código conserva la misma clave local de datos.
+
+
+NOVEDAD VERSIÓN 11.0 — UNIDAD LIBRA Y ELIMINACIÓN SEGURA DE PRODUCTOS
+- Se añadió libra a las unidades de medida disponibles al crear un producto.
+- Se muestra el botón Eliminar solo cuando la existencia del producto es cero o menor.
+- La función vuelve a validar la existencia antes de borrar.
+- No permite eliminar productos que estén vinculados a una receta para evitar romperla.
+- Elimina el producto del inventario actual, pero conserva ventas, movimientos e IPV históricos que ya guardaron el nombre y los importes.
+- La clave de almacenamiento local se mantiene; se actualizó la caché del service worker a v11.
+IMPORTANTE: exporta una copia completa antes de publicar. No borres los datos de Chrome ni desinstales la app para actualizar.
