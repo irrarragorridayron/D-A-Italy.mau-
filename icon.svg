@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#10468b"/><stop offset="1" stop-color="#041a3c"/></linearGradient><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffdf80"/><stop offset="1" stop-color="#c58a18"/></linearGradient></defs>
+<rect x="12" y="12" width="488" height="488" rx="104" fill="url(#b)" stroke="url(#g)" stroke-width="12"/>
+<circle cx="256" cy="235" r="155" fill="none" stroke="url(#g)" stroke-width="10"/>
+<path d="M60 190 L128 148 L128 286 L60 246Z" fill="#e52335"/><path d="M81 201 L96 211 L90 229 L108 218 L126 229 L120 210 L135 199 L116 199 L108 181 L101 199Z" fill="#fff"/>
+<text x="145" y="270" font-family="Arial,sans-serif" font-size="150" font-weight="900" fill="#fff">D</text>
+<text x="254" y="267" font-family="Arial,sans-serif" font-size="86" font-weight="900" fill="url(#g)">&amp;</text>
+<text x="318" y="270" font-family="Arial,sans-serif" font-size="150" font-weight="900" fill="#fff">A</text>
+<path d="M338 112 C355 73 377 65 392 39 C388 68 375 84 368 97 C392 79 407 78 427 75 C406 91 393 102 378 112 C402 107 418 112 438 125 C410 122 392 126 373 135 C391 139 402 151 412 165 C388 155 372 151 357 155" fill="#fff"/>
+<path d="M153 310 Q256 343 359 310" fill="none" stroke="#e52335" stroke-width="16" stroke-linecap="round"/>
+<text x="256" y="376" text-anchor="middle" font-family="Arial,sans-serif" font-size="43" font-weight="900" letter-spacing="2" fill="#fff">ITALY.MAU</text>
+<path d="M94 407 H418" stroke="url(#g)" stroke-width="6"/><path d="M256 393 l10 14 -10 14 -10 -14Z" fill="url(#g)"/>
+</svg>

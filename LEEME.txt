@@ -66,3 +66,11 @@ NOVEDAD VERSIÓN 11.0 — UNIDAD LIBRA Y ELIMINACIÓN SEGURA DE PRODUCTOS
 - Elimina el producto del inventario actual, pero conserva ventas, movimientos e IPV históricos que ya guardaron el nombre y los importes.
 - La clave de almacenamiento local se mantiene; se actualizó la caché del service worker a v11.
 IMPORTANTE: exporta una copia completa antes de publicar. No borres los datos de Chrome ni desinstales la app para actualizar.
+
+
+VERSIÓN 12.0 - MEJORAS SOLICITADAS
+- En Editar producto se puede cambiar la unidad de medida (incluye libra).
+- En ventas en efectivo se permite indicar el efectivo entregado, propina y se calcula el vuelto.
+- En pagos mixtos se calcula el vuelto si el efectivo entregado supera el importe pendiente.
+- Cantidades residuales inferiores a 0.000001 se normalizan a cero para evitar residuos decimales mínimos.
+- Se actualizó la caché del service worker a v12.
